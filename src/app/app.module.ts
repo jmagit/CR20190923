@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainModule } from './main';
 import { CommonAppModule } from './common-app';
-import { IndraCoreModule } from 'src/indra-core';
+import { IndraCoreModule, LoggerService } from 'src/indra-core';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,9 @@ import { IndraCoreModule } from 'src/indra-core';
     BrowserModule, FormsModule,
     AppRoutingModule, MainModule, CommonAppModule, IndraCoreModule,
   ],
-  providers: [],
+  providers: [
+    LoggerService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

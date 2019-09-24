@@ -21,7 +21,16 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, similique aliqu
 </p>
 <ul>
   <li *ngFor="let item of listado; let ind=index; let fondo=odd;"
-    [style.background-color]="fondo ? 'LightBlue' : 'Lavender'">
+    [style.background-color]="fondo ? 'LightBlue' : 'Yellow'">
       {{item.nombre}} ({{item.id}}) [{{ind+1}} de {{listado.length}}]
   </li>
 </ul>
+<p>
+  <select [(ngModel)]="idProvincia" >
+    <option value="">--Elige opción--</option>
+    <option *ngFor="let p of listado" [value]="p.id">{{p.nombre}}</option>
+  </select>
+  Seleccionada: {{idProvincia}}
+  <input type="text" value="Tabarnia" #txtProvincia>
+  <input type="button" value="añadir" (click)="add(txtProvincia.value)">
+</p>

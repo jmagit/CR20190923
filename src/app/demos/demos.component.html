@@ -1,4 +1,4 @@
-<h1>Hola {{nombre}}</h1>
+<h1>Hola {{nombre | elipsis:20 | uppercase}}</h1>
 <p>
   <input type="text" [(ngModel)]="nombre"><br>
   <input type="button" value="saluda" (click)="saluda()">
@@ -17,12 +17,12 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, similique aliqu
 </p>
 <p [class.invisible]="!visible">Ahora me ves</p>
 <p>
-  Calcula: 2 + 2 = {{2 + 2}} = {{calcula(2,2)}}
+  Calcula: 2 + 2 = {{2 + 2}} = {{calcula(2,2) | currency:'EUR':'symbol':'1.2-2' }}
 </p>
 <ul>
-  <li *ngFor="let item of listado; let ind=index; let fondo=odd;"
+  <li *ngFor="let item of listado | slice:-5; let ind=index; let fondo=odd;"
     [style.background-color]="fondo ? 'LightBlue' : 'Yellow'">
-      {{item.nombre}} ({{item.id}}) [{{ind+1}} de {{listado.length}}]
+      {{item.nombre | titlecase}} ({{item.id}}) [{{ind+1}} de {{listado.length}}]
   </li>
 </ul>
 <p>
@@ -33,4 +33,7 @@ Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, similique aliqu
   Seleccionada: {{idProvincia}}
   <input type="text" value="Tabarnia" #txtProvincia>
   <input type="button" value="añadir" (click)="add(txtProvincia.value)">
+</p>
+<p>
+  {{listado | json}}
 </p>

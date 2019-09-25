@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificationService } from '../common-app';
+import { NotificationService, NotificationType } from '../common-app';
 
 @Component({
   selector: 'app-demos',
@@ -7,6 +7,8 @@ import { NotificationService } from '../common-app';
   styleUrls: ['./demos.component.css']
 })
 export class DemosComponent implements OnInit {
+  public readonly NotificationType = NotificationType;
+
   nombre: string = 'mundo';
   idProvincia: number = 2;
   listado = [
@@ -51,6 +53,25 @@ export class DemosComponent implements OnInit {
 
 
   ngOnInit() {
+  }
+
+  // tslint:disable:member-ordering
+  idiomas = [
+    { codigo: 'es', region: 'España' },
+    { codigo: 'pt', region: 'Portuges' },
+    { codigo: 'en-US', region: 'USA' }
+  ];
+  idioma = this.idiomas[0].codigo;
+  calculos: any[] = [];
+  valCalculadora = 666;
+  // tslint:enable:member-ordering
+
+  ponResultado(origen: string, valor: any) {
+    this.calculos.push({
+      pos: this.calculos.length + 1,
+      origen,
+      valor
+    });
   }
 
 }

@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { User, RegisterUserDAO, LoginService } from '../services/serguridad.service';
 import { Router } from '@angular/router';
 import { LoggerService } from '../../../indra-core';
-import { NotificationService, NotificationType } from 'src/app/app-common';
+import { NotificationService, NotificationType } from 'src/app/common-app';
 
 @Component({
   selector: 'app-register-user',

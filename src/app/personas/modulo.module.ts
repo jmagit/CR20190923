@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PersonasComponent } from './componente.component';
+import { PERSONAS_COMPONENTES } from './componente.component';
 import { FormsModule } from '@angular/forms';
 import { IndraCoreModule } from 'src/indra-core';
 import { CommonAppModule } from '../common-app';
@@ -9,10 +9,10 @@ import { CommonAppModule } from '../common-app';
 
 @NgModule({
   declarations: [
-    PersonasComponent
+    PERSONAS_COMPONENTES
   ],
   exports: [
-    PersonasComponent
+    PERSONAS_COMPONENTES
   ],
   imports: [
     CommonModule, FormsModule, IndraCoreModule, CommonAppModule,

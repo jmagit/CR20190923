@@ -17,7 +17,7 @@ import { environment } from 'src/environments/environment';
 import { DemosComponent } from './demos/demos.component';
 import { DinamicoComponent } from './dinamico/dinamico.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
-import { PersonasModule } from './personas';
+import { PersonasModule, PersonasViewModelService, PersonasViewModelDAOService } from './personas';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -36,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoggerService,
     { provide: ERROR_LEVEL, useValue: environment.ERROR_LEVEL },
     { provide: LOCALE_ID, useValue: 'es-ES' },
+    { provide: PersonasViewModelService, useClass: PersonasViewModelDAOService },
   ],
   bootstrap: [AppComponent]
 })

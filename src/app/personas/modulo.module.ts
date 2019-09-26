@@ -4,6 +4,7 @@ import { PERSONAS_COMPONENTES } from './componente.component';
 import { FormsModule } from '@angular/forms';
 import { IndraCoreModule } from 'src/indra-core';
 import { CommonAppModule } from '../common-app';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +16,7 @@ import { CommonAppModule } from '../common-app';
     PERSONAS_COMPONENTES
   ],
   imports: [
-    CommonModule, FormsModule, IndraCoreModule, CommonAppModule,
+    CommonModule, FormsModule, RouterModule.forChild([]), IndraCoreModule, CommonAppModule,
   ]
 })
 export class PersonasModule { }
